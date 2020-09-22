@@ -1,0 +1,30 @@
+.header__logo {
+  width: 182px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .icon {
+      width: 36.12px;
+      height: 100%;
+      background-image: url('../../../assets/images/logo.png');
+      background-repeat: no-repeat;
+  }
+
+  .title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+  }
+}
+
+
+@media (max-width: 1050px) {
+  .header {
+
+      &__logo {
+          margin-bottom: 10px;
+      }
+  }
+}

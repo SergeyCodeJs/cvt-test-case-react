@@ -1,0 +1,12 @@
+.header__login_container {
+  display: flex;
+  align-items: center;
+}
+
+.user_name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  margin-right: 16px;
+  cursor: url("../../../assets/images/cursor-hand.png"), default;
+}

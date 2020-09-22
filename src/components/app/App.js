@@ -1,11 +1,12 @@
 import React, {Fragment} from 'react';
 import Layout from '../../hoc/layout/layout'
+import Switcher from '../switcher/switcher'
 
 function App() {
     return (
         <Fragment>
             <Layout>
-                <div>Layout</div>
+                <Switcher/>
             </Layout>
         </Fragment>
     );
