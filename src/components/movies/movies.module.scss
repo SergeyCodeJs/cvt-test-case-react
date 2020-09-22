@@ -1,0 +1,19 @@
+.movies__container {
+  height: 480px;
+  position: relative;
+}
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 7px;
+  bottom: 7px;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  left: 0;
+}
