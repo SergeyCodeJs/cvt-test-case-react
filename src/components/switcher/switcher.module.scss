@@ -1,17 +1,16 @@
 .switcher {
     display: flex;
-    max-width: 324px;
+    max-width: 310px;
     justify-content: space-between;
     font-weight: 500;
     font-size: 28px;
     line-height: 29px;
-    text-align: right;
     color: #E5261E;
 
     &__margin {
         margin: 0 auto;
         position: relative;
-        right: 3px;
+        left: 4px;
         margin-top: 46px;
         margin-bottom: 31px;
     }
