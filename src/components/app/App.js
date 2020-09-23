@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
-import Movies from '../movies/movies'
+import Movies from '../movies/moviesRender'
 import Genres from '../genres/genres'
 import Channels from '../channels/channels-container'
 import SectionTitle from '../section-title/sectionTitle'
@@ -13,7 +13,7 @@ function App() {
     return (
         <Layout>
             <Switcher/>
-            <SectionTitle title="&#128293;Новинки"/>
+            <SectionTitle title="&#128293;     Новинки"/>
             <Movies movieService={movieService}/>
             <SectionTitle title="Жанры"/>
             <Genres movieService={movieService}/>

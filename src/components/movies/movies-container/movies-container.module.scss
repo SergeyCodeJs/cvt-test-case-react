@@ -7,7 +7,7 @@
   width: 100%;
   overflow: hidden;
   position: absolute;
-  left: 0;
+  left: 1px;
   top: 7px;
   bottom: 7px;
 }
@@ -15,5 +15,5 @@
 .content {
   position: relative;
   display: flex;
-  left: 0;
+  left: 4px;
 }

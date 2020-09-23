@@ -2,13 +2,15 @@ import React from 'react'
 import classes from '../singleMovie/singleMovie.module.scss'
 
 export default function SingleMovie({movieName, logoSrc, description}) {
-  return (
-    <div className={classes.movie__container}>
-      <div className={classes.movie}>
-        <img className={classes.movie__img} src={logoSrc} alt={movieName}></img>
-        <p className={classes.movie__description}>{description}</p>
-      </div>
-      <p className={classes.movie__title}>{movieName}</p>
-    </div>
-  )
+    const {movie__container, movie, movie__img, movie__description, movie__title} = classes;
+    
+    return (
+        <div className={movie__container}>
+            <div className={movie}>
+                <img className={movie__img} src={logoSrc} alt={movieName}></img>
+                <p className={movie__description}>{description}</p>
+            </div>
+            <p className={movie__title}>{movieName}</p>
+        </div>
+    )
 }
