@@ -1,0 +1,23 @@
+.genres__container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+      display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .genres__container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+}
+@media (max-width: 480px) {
+  .genres__container {
+      display: block;
+  }
+}
