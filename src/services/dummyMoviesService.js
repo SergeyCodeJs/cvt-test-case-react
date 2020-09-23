@@ -12,6 +12,7 @@ import firstChannel from '../assets/images/channels/first.png'
 import twoXtwo from '../assets/images/channels/dvaXdva.png'
 import rbk from '../assets/images/channels/rbc.png'
 import amedia from '../assets/images/channels/amedia.png'
+import prog from '../assets/images/channels/prog.png'
 
 
 export default class DummyMoviesService {
@@ -142,6 +143,22 @@ export default class DummyMoviesService {
                 }, {
                     time: "15:00",
                     title: "Секс в большом городе"
+                }
+            ]
+        },
+        {
+            name: "Программист Plus",
+            logo: prog,
+            schedule: [
+                {
+                    time: "13:00",
+                    title: "Облачные сервисы"
+                }, {
+                    time: "14:00",
+                    title: "Отличия Flux от Redux"
+                }, {
+                    time: "15:00",
+                    title: "Телевикторина по CSS3"
                 }
             ]
         }

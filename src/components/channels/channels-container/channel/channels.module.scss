@@ -5,15 +5,15 @@
     margin-top: -4px;
     margin-bottom: 20px;
     background: #F2F2F2;
-    max-height: 162px;
-    border-radius: 8px;
+    height: 162px;
+    border-radius: 10px;
 
     &__logo_container {
         width: 114px;
         display: flex;
         justify-content: center;
         margin-right: 12.1186%;
-        margin-bottom: 2px;
+        margin-bottom: -1px;
     }
 
     &__logo {
@@ -29,8 +29,8 @@
     }
 
     &__schedule_container {
-        margin-top: 12px;
-        margin-left: 18px;
+        margin-top: 16px;
+        margin-left: 16px;
     }
 }
 @media (max-width: 960px) {
