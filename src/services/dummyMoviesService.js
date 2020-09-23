@@ -4,10 +4,15 @@ import multVKino from '../assets/images/movies/mult-v-kino.png'
 import strip from '../assets/images/movies/strip.png'
 import terminator from '../assets/images/movies/terminator.png'
 import tupoi from '../assets/images/movies/tupoi.png'
-import smile from '../assets/images/smiles/genre/😁.png'
-import crySmile from '../assets/images/smiles/genre/😭.png'
-import ufoSmile from '../assets/images/smiles/genre/👽.png'
-import ghostSmile from '../assets/images/smiles/genre/👻.png'
+import smile from '../assets/images/smiles/genre/smile.png'
+import crySmile from '../assets/images/smiles/genre/crySmile.png'
+import ufoSmile from '../assets/images/smiles/genre/alien.png'
+import ghostSmile from '../assets/images/smiles/genre/ghost.png'
+import firstChannel from '../assets/images/channels/first.png'
+import twoXtwo from '../assets/images/channels/dvaXdva.png'
+import rbk from '../assets/images/channels/rbc.png'
+import amedia from '../assets/images/channels/amedia.png'
+
 
 export default class DummyMoviesService {
     _movies = [
@@ -81,7 +86,7 @@ export default class DummyMoviesService {
     _channels = [
         {
             name: "Первый канал",
-            logo: "../assets/img/channels/1st.png",
+            logo: firstChannel,
             schedule: [
                 {
                     time: "13:00",
@@ -96,7 +101,7 @@ export default class DummyMoviesService {
             ]
         }, {
             name: "2x2",
-            logo: "../assets/img/channels/2x2.png",
+            logo: twoXtwo,
             schedule: [
                 {
                     time: "13:00",
@@ -111,7 +116,7 @@ export default class DummyMoviesService {
             ]
         }, {
             name: "РБК",
-            logo: "../assets/img/channels/rbc.png",
+            logo: rbk,
             schedule: [
                 {
                     time: "13:00",
@@ -126,7 +131,7 @@ export default class DummyMoviesService {
             ]
         }, {
             name: "AMEDIA PREMIUM",
-            logo: "../assets/img/channels/amedia.png",
+            logo: amedia,
             schedule: [
                 {
                     time: "13:00",

@@ -1,0 +1,20 @@
+.channel {
+    &__program_container {
+        display: flex;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 12px;
+    }
+    &__program_container:first-of-type {
+        color: red;
+    }
+
+    &__time {
+        margin: 0 16px 0 0;
+    }
+
+    &__program_title {
+        margin: 0;
+    }
+}

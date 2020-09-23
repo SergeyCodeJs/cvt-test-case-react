@@ -3,6 +3,7 @@ import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
 import Movies from '../movies/movies'
 import Genres from '../genres/genres'
+import Channels from '../channels/channels-container'
 import DummyMoviesService from '../../services/dummyMoviesService'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
             <Switcher/>
             <Movies movieService={movieService}/>
             <Genres movieService={movieService}/>
+            <Channels movieService={movieService}/>
         </Layout>
     );
 }
