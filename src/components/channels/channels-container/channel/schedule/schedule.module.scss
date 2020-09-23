@@ -2,9 +2,10 @@
     &__program_container {
         display: flex;
         font-weight: normal;
-        font-size: 16px;
+        font-size: 15.9px;
         line-height: 19px;
         margin-bottom: 12px;
+        letter-spacing: 0;
     }
     &__program_container:first-of-type {
         color: red;
@@ -15,6 +16,6 @@
     }
 
     &__program_title {
-        margin: 0;
+        margin: 0 0 0 5px;
     }
 }
