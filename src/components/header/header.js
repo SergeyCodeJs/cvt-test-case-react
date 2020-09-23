@@ -6,9 +6,10 @@ import Button from '../ui/button/button'
 import Input from '../ui/input/input'
 import HeaderLogin from './header-login/header-login'
 
-export default function Header(props) {
+export default function Header() {
+    const {header} = classes;
     return (
-        <header className={classes.header}>
+        <header className={header}>
             <Logo title="Видеосервис"/>
             <Form action="#" onSubmit={function () {
                 return
