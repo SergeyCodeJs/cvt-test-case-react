@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
 import Movies from '../movies/renderMovies'
 import Genres from '../genres/renderGenres'
-import Channels from '../channels/channels-container'
+import Channels from '../channels/renderChannels'
 import SectionTitle from '../section-title/sectionTitle'
 import DummyMoviesService from '../../services/dummyMoviesService'
 
@@ -13,11 +13,11 @@ function App() {
     return (
         <Layout>
             <Switcher/>
-            <SectionTitle title="&#128293;     Новинки"/>
+            {/* <SectionTitle title="&#128293;     Новинки"/>
             <Movies movieService={movieService}/>
             <SectionTitle title="Жанры"/>
-            <Genres movieService={movieService}/>
-            {/* <Channels movieService={movieService}/> */}
+            <Genres movieService={movieService}/> */}
+            <Channels movieService={movieService}/>
         </Layout>
     );
 }
