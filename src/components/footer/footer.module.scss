@@ -1,0 +1,43 @@
+.footer {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: #F2F2F2;
+  padding: 0 9.027777778% 0 9.027777778%;
+
+  &__logo {
+      display: block;
+      margin-right: 3.3898%;
+  }
+
+  &__address {
+      margin-bottom: 6px;
+  }
+
+  &__phones {
+      margin-bottom: 10px;
+
+      a {
+          cursor: url("../../assets/images/cursor-hand.png"), default;
+          color: #333333;
+      }
+
+  }
+
+  &__site {
+      margin-bottom: 25px;
+      color: #1F4766;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      cursor: url("../../assets/images/cursor-hand.png"), default;
+  }
+}
+@media (max-width: 480px) {
+  .footer {
+      height: 160px;
+  }
+}

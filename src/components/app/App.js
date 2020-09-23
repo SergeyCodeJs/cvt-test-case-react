@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
 import Movies from '../movies/movies'
