@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './header-login.scss'
+import classes from './header-login.module.scss'
 import Button from '../../ui/button/button'
 
 export default function HeaderLogin() {

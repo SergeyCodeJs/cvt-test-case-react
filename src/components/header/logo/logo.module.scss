@@ -1,16 +1,17 @@
 .header__logo {
-  width: 182px;
+  width: 191px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-top: -3px;
 
   .icon {
-      width: 36.12px;
+      width: 38.15px;
       height: 100%;
       background-image: url('../../../assets/images/logo.png');
       background-repeat: no-repeat;
-      margin-right: 10px;
+      background-size: contain;
   }
 
   .title {

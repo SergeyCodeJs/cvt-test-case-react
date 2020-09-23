@@ -3,9 +3,19 @@
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
-    margin-top: 23px;
-    padding: 0 9.027777778% 0 8.85%;
+    margin-top: 31px;
+    padding: 0 9.027777778% 0 8.73%;
+
+    form {
+        padding-top: 3px;
+        margin-left: -41px;
+
+        input {
+            line-height: 24px;
+        }
+    }
 }
+
 
 .new-name-input {
     width: 215px;
