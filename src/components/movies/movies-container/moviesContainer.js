@@ -4,11 +4,13 @@ import SingleMovie from '../singleMovie/singleMovie'
 
 export default function MoviesContainer({movies}) {
     const {movies__container, viewport, content} = classes;
+    const movieComponents = renderMovies(movies);
+
     return (
         <div className={movies__container}>
             <div className={viewport}>
                 <div className={content}>
-                    {renderMovies(movies)}
+                    {movieComponents}
                 </div>
             </div>
         </div>

@@ -2,8 +2,8 @@
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
-
   overflow-x: auto;
+  margin: 15px 0 72px 0;
 
   &::-webkit-scrollbar {
       display: none;

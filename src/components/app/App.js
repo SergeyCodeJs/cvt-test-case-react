@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
 import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
-import Movies from '../movies/moviesRender'
-import Genres from '../genres/genres'
+import Movies from '../movies/renderMovies'
+import Genres from '../genres/renderGenres'
 import Channels from '../channels/channels-container'
 import SectionTitle from '../section-title/sectionTitle'
 import DummyMoviesService from '../../services/dummyMoviesService'

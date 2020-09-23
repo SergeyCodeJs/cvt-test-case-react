@@ -1,43 +1,43 @@
 .footer {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  background-color: #F2F2F2;
-  padding: 0 9.027777778% 0 9.027777778%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 15.9px;
+    line-height: 20px;
+    background-color: #F2F2F2;
+    padding: 0 9.027777778%;
 
-  &__logo {
-      display: block;
-      margin-right: 3.3898%;
-  }
+    &__logo {
+        display: block;
+        margin-right: 3.3898%;
+    }
 
-  &__address {
-      margin-bottom: 6px;
-  }
+    &__address {
+        margin-top: -2px;
+        margin-bottom: 5px;
+    }
 
-  &__phones {
-      margin-bottom: 10px;
+    &__phones {
+        margin-bottom: 9px;
 
-      a {
-          cursor: url("../../assets/images/cursor-hand.png"), default;
-          color: #333333;
-      }
+        a {
+            cursor: url("../../assets/images/cursor-hand.png"), default;
+            color: #333333;
+        }
+    }
 
-  }
-
-  &__site {
-      margin-bottom: 25px;
-      color: #1F4766;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 19px;
-      cursor: url("../../assets/images/cursor-hand.png"), default;
-  }
+    &__site {
+        margin-bottom: 21px;
+        color: #1F4766;
+        font-weight: 500;
+        font-size: 15.9px;
+        line-height: 19px;
+        cursor: url("../../assets/images/cursor-hand.png"), default;
+    }
 }
 @media (max-width: 480px) {
-  .footer {
-      height: 160px;
-  }
+    .footer {
+        height: 160px;
+    }
 }
