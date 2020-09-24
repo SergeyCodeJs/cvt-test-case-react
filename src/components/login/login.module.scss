@@ -1,0 +1,43 @@
+.login {
+    position: absolute;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    top: 30.1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 304px;
+    height: 394px;
+    padding: 36px;
+    background: #ffffff;
+    border-radius: 8px;
+
+    &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 23px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    &__input {
+        width: 232px;
+        margin-bottom: 24px;
+    }
+}
+
+.validation {
+    height: 10px;
+    color: red;
+    margin-bottom: 101px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}

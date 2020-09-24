@@ -5,6 +5,7 @@ import Movies from '../movies/renderMovies'
 import Genres from '../genres/renderGenres'
 import Channels from '../channels/renderChannels'
 import SectionTitle from '../section-title/sectionTitle'
+import Login from '../login/login'
 import DummyMoviesService from '../../services/dummyMoviesService'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <SectionTitle title="Жанры"/>
             <Genres movieService={movieService}/> */}
             <Channels movieService={movieService}/>
+            <Login/>
         </Layout>
     );
 }
