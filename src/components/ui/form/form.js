@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './form.module.scss'
 
 export default function Form(props) {
     const {action, onSubmit, className} = props;
@@ -11,7 +10,7 @@ export default function Form(props) {
     }
     
     return (
-        <form className={cls} action={action} onsubmit={onSubmit}>
+        <form className={cls} action={action} onSubmit={onSubmit}>
             {props.children}
         </form>
     )

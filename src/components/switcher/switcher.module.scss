@@ -5,7 +5,7 @@
     font-weight: 500;
     font-size: 28px;
     line-height: 29px;
-    color: #E5261E;
+    
 
     &__margin {
         margin: 0 auto;
@@ -15,16 +15,19 @@
         margin-bottom: 31px;
     }
 
+    a {
+        cursor: url("../../assets/images/cursor-hand.png"), default;
+        color: black;
+        padding-bottom: 9px;
+        transition: transform 0.3s ease-in-out;
+    }
+
     .link {
         cursor: url("../../assets/images/cursor-hand.png"), default;
         color: #000;
         padding-bottom: 9px;
         transition: transform 0.3s ease-in-out;
 
-        &__active {
-            border-bottom: 2px solid #E5261E;
-            color: #E5261E;
-        }
         &:hover {
             transform: scale(1.05);
         }

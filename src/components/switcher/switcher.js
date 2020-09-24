@@ -1,12 +1,16 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
+import { withRouter } from 'react-router';
 import classes from './switcher.module.scss'
 
-export default function Switcher() {
+function Switcher() {
     const {switcher, switcher__margin, link, link__active} = classes;
     return (
         <div className={`${switcher} ${switcher__margin}`}>
-            <a className={`${link} ${link__active}`} href="#">Фильмы</a>
-            <a className={link} href="#">Телеканалы</a>
+            <NavLink exact to="/">Фильмы</NavLink>
+            <NavLink to="/channels">Телеканалы</NavLink>
         </div>
     )
 }
+
+export default withRouter(Switcher)

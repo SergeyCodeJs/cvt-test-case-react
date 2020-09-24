@@ -9,7 +9,7 @@ function Movies({movieService}) {
         movieService
             .getAllMovies()
             .then(movie => setMovies(movie))
-    }, [])
+    }, [movieService])
 
     if (!movies) {
         return null

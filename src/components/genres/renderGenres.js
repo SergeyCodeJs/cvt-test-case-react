@@ -9,7 +9,7 @@ export default function Genres({movieService}) {
         movieService
             .getAllGenres()
             .then(genre => setGenres(genre));
-    }, [])
+    }, [movieService])
 
     if (!genres) {
         return null

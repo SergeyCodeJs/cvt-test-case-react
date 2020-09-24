@@ -45,6 +45,11 @@ body {
   padding: 0 9.027777778% 0 8.7%;
 }
 
+.active {
+  border-bottom: 3px solid #E5261E;
+  color: #E5261E !important
+}
+
 *, *:before, *:after { box-sizing: border-box; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; }

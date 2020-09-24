@@ -9,7 +9,7 @@ export default function RenderChannels({movieService}) {
         movieService
             .getAllChannels()
             .then(channel => setChannels(channel))
-    }, [])
+    }, [movieService])
 
     if (!channels) {
         return null

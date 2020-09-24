@@ -9,7 +9,7 @@ export default function Channel({name, logo, schedule}) {
     return (
         <div className={channel}>
             <div className={channel__logo_container}>
-                <img className={channel__logo} src={logo}></img>
+                <img className={channel__logo} src={logo} alt={name}></img>
             </div>
             <div className={channel__schedule_container}>
                 <h2 className={channel__title}>{name}</h2>
