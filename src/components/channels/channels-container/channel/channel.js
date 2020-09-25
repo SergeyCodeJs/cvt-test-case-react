@@ -1,6 +1,6 @@
 import React from 'react'
 import Schedule from './schedule/schedule'
-import classes from './channels.module.scss'
+import classes from './channel.module.scss'
 
 export default function Channel({name, logo, schedule}) {
     const {channel, channel__logo_container, channel__logo, channel__schedule_container, channel__title} = classes;

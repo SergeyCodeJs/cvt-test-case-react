@@ -5,7 +5,6 @@
     font-weight: 500;
     font-size: 28px;
     line-height: 29px;
-    
 
     &__margin {
         margin: 0 auto;
@@ -21,18 +20,14 @@
         padding-bottom: 9px;
         transition: transform 0.3s ease-in-out;
     }
-
-    .link {
-        cursor: url("../../assets/images/cursor-hand.png"), default;
-        color: #000;
-        padding-bottom: 9px;
-        transition: transform 0.3s ease-in-out;
-
-        &:hover {
-            transform: scale(1.05);
-        }
+    a:hover {
+        transform: scale(1.01);
     }
-    .link:not(:last-child) {
-        margin-right: 2.63%;
+}
+@media (max-width: 475px) {
+    .switcher {
+        width: 300px;
+        font-size: 26px;
+        justify-content: space-around;
     }
 }

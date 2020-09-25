@@ -38,11 +38,13 @@ function App() {
 
     function loginWindowHandler() {
         if (!isLoggedIn) {
-            setIsLoginWindowOpen(isLoginWindowOpen => !isLoginWindowOpen)
+            setIsLoginWindowOpen(isLoginWindowOpen => !isLoginWindowOpen);
+            setLoginInputValue("");
+            setPasswordInputValue("");
+            setIsCheckboxChecked(false);
         } else {
             onLogout();
         }
-
     }
 
     const onLogout = () => {
@@ -81,8 +83,8 @@ function App() {
             return
         }
 
-        if (loginInputValue.length > 10) {
-            setLoginErrorText("Поле логина не может быть длиннее 10 символов, пожалуйста, введите более коротки" +
+        if (loginInputValue.length > 13) {
+            setLoginErrorText("Поле логина не может быть длиннее 13 символов, пожалуйста, введите более коротки" +
                     "й логин")
             return
         }
@@ -109,9 +111,9 @@ function App() {
                 alert("Поле логина не может быть пустым, пожалуйста, введите логин!")
                 return
             }
-    
-            if (userNameInputValue.length > 10) {
-                alert("Поле логина не может быть длиннее 10 символов, пожалуйста, введите более коротки" +
+
+            if (userNameInputValue.length > 13) {
+                alert("Поле логина не может быть длиннее 13 символов, пожалуйста, введите более коротки" +
                         "й логин")
                 return
             }

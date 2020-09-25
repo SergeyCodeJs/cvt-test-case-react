@@ -6,9 +6,11 @@
     margin-top: 31px;
     padding: 0 9.027777778% 0 8.73%;
 
-    form {
+    &__form {
+        align-self: center;
         padding-top: 3px;
         margin-left: -41px;
+        margin-bottom: 10px;
 
         input {
             line-height: 24px;
@@ -19,32 +21,33 @@
 
 @media (max-width: 1050px) {
     .header {
+        padding: 0;
         flex-direction: column;
 
-        &__search {
+        form {
+            margin: 0 auto;
+        }
+
+        input[type="text"] {
             margin-bottom: 10px;
         }
     }
 }
 @media (max-width: 500px) {
-    .header .search__input {
-        width: 100%;
-    }
+        .header {
+            form {
+                button {
+                    margin-left: 50%;
+                    transform: translate(-50%);
+                }
 
-    .header {
-        &__search form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+                input {
+                    width: 100%; 
+                }
 
-            .search__button {
-                margin: 0;
-            }
-
-            .search__input.input {
-                margin-bottom: 10px;
+                #search {
+                    color: black;
+                }
             }
         }
-    }
 }

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import classes from './switcher.module.scss'
 
 function Switcher() {
-    const {switcher, switcher__margin, link, link__active} = classes;
+    const {switcher, switcher__margin} = classes;
     return (
         <div className={`${switcher} ${switcher__margin}`}>
             <NavLink exact to="/">Фильмы</NavLink>

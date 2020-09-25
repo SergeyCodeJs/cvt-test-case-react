@@ -16,11 +16,11 @@ export default function Header({
     onNewUserNameChange,
     showNewUserInput
 }) {
-    const {header} = classes;
+    const {header, search__button} = classes;
     return (
         <header className={header}>
             <Logo title="Видеосервис"/>
-            <Form action="#" onSubmit={function () {
+            <Form className={classes.header__form} action="#" onSubmit={function () {
                 return
             }}>
                 <Input type="text" placeholder="Поиск..."/>

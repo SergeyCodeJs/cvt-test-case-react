@@ -20,6 +20,6 @@ export default function Button({type, align, marginTop, onClickHandler}) {
     }
 
     return (
-        <button style={{marginTop: marginTop}} className={cls.join(' ')} onClick={onClickHandler}>{buttonText}</button>
+        <button style={{marginTop: marginTop}} id={type} className={cls.join(' ')} onClick={onClickHandler}>{buttonText}</button>
     )
 }
