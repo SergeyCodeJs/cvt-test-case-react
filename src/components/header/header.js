@@ -6,7 +6,16 @@ import Button from '../ui/button/button'
 import Input from '../ui/input/input'
 import HeaderLogin from './header-login/header-login'
 
-export default function Header() {
+export default function Header({
+    isLoggedIn,
+    isLoginWindowOpen,
+    userName,
+    onLoginClickHandler,
+    onUserNameClick,
+    changeUserNameInputValue,
+    onNewUserNameChange,
+    showNewUserInput
+}) {
     const {header} = classes;
     return (
         <header className={header}>
@@ -17,7 +26,15 @@ export default function Header() {
                 <Input type="text" placeholder="Поиск..."/>
                 <Button type="search"/>
             </Form>
-            <HeaderLogin/>
+            <HeaderLogin
+                userName={userName}
+                onLoginClickHandler={onLoginClickHandler}
+                onUserNameClick={onUserNameClick}
+                isLoggedIn={isLoggedIn}
+                isLoginWindowOpen={isLoginWindowOpen}
+                changeUserNameInputValue={changeUserNameInputValue}onNewUserNameChange={onNewUserNameChange}
+                showNewUserInput={showNewUserInput}
+                />
         </header>
     )
 }
