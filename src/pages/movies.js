@@ -4,7 +4,10 @@ import RenderMovies from '../components/movies/renderMovies'
 import Genres from '../components/genres/renderGenres'
 import SectionTitle from '../components/section-title/sectionTitle'
 
-export default function Movies({movieService}) {
+import withDummyVideoService from '../hoc/withDummyMovieService'
+
+function Movies({movieService}) {
+    
     return (
         <Fragment>
             <SectionTitle title="&#128293;     Новинки"/>
@@ -14,3 +17,5 @@ export default function Movies({movieService}) {
         </Fragment>
     )
 }
+
+export default withDummyVideoService(Movies)

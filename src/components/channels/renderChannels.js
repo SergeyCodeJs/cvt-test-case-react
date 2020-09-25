@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ChannelsContainer from './channels-container/channels-container'
+import withDummyVideoService from '../../hoc/withDummyMovieService'
 
-export default function RenderChannels({movieService}) {
+function RenderChannels({movieService}) {
     const [channels,
         setChannels] = useState(null);
 
@@ -17,3 +18,5 @@ export default function RenderChannels({movieService}) {
 
     return (<ChannelsContainer channels={channels}/>)
 }
+
+export default withDummyVideoService(RenderChannels)

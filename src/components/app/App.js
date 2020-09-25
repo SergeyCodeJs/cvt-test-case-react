@@ -5,11 +5,9 @@ import Switcher from '../switcher/switcher'
 import Movies from '../../pages/movies'
 import Channels from '../channels/renderChannels'
 import Login from '../login/login'
-import DummyMoviesService from '../../services/dummyMoviesService'
+import ErrorBoundry from '../error-boundry/error-boundry'
 
 function App() {
-    const movieService = new DummyMoviesService();
-
     const [isLoggedIn,
         setIsLoggedIn] = useState(false);
     const [userName,
@@ -126,38 +124,40 @@ function App() {
     }
 
     return (
-        <Router>
-            <Layout
-                isLoggedIn={isLoggedIn}
-                isLoginWindowOpen={isLoginWindowOpen}
-                userName={userName}
-                onLoginClickHandler={loginWindowHandler}
-                onUserNameClick={onUserNameClickHandler}
-                showNewUserInput={showNewUserInput}
-                changeUserNameInputValue={userNameInputValue}
-                onNewUserNameChange={onNewUserNameChangeHandler}>
-                <Switcher/>
-                <Switch>
-                    <Route path="/channels">
-                        <Channels movieService={movieService}/>
-                    </Route>
-                    <Route path="/">
-                        <Movies movieService={movieService}/>
-                    </Route>
-                    <Route component={Movies}></Route>
-                </Switch>
-                <Login
-                    isLoginWindowOpen={isLoginWindowOpen}
+        <ErrorBoundry>
+            <Router>
+                <Layout
                     isLoggedIn={isLoggedIn}
-                    isChecked={isCheckboxChecked}
-                    loginInputValue={loginInputValue}
-                    passwordInputValue={passwordInputValue}
-                    loginErrorText={loginErrorText}
-                    onLoginButtonClick={onLoginButtonClickHandler}
-                    loginWindowHandler={loginWindowHandler}
-                    onInputChange={inputChangeHandler}/>
-            </Layout>
-        </Router>
+                    isLoginWindowOpen={isLoginWindowOpen}
+                    userName={userName}
+                    onLoginClickHandler={loginWindowHandler}
+                    onUserNameClick={onUserNameClickHandler}
+                    showNewUserInput={showNewUserInput}
+                    changeUserNameInputValue={userNameInputValue}
+                    onNewUserNameChange={onNewUserNameChangeHandler}>
+                    <Switcher/>
+                    <Switch>
+                        <Route path="/channels">
+                            <Channels/>
+                        </Route>
+                        <Route path="/">
+                            <Movies/>
+                        </Route>
+                        <Route component={Movies}></Route>
+                    </Switch>
+                    <Login
+                        isLoginWindowOpen={isLoginWindowOpen}
+                        isLoggedIn={isLoggedIn}
+                        isChecked={isCheckboxChecked}
+                        loginInputValue={loginInputValue}
+                        passwordInputValue={passwordInputValue}
+                        loginErrorText={loginErrorText}
+                        onLoginButtonClick={onLoginButtonClickHandler}
+                        loginWindowHandler={loginWindowHandler}
+                        onInputChange={inputChangeHandler}/>
+                </Layout>
+            </Router>
+        </ErrorBoundry>
     );
 }
 
