@@ -1,23 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import MoviesContainer from './movies-container/moviesContainer'
+import withData from '../../hoc/withData'
 
-function Movies({movieService}) {
-    const [movies,
-        setMovies] = useState(null);
-
-    useEffect(() => {
-        movieService
-            .getAllMovies()
-            .then(movie => setMovies(movie))
-    }, [movieService])
-
-    if (!movies) {
-        return null
-    }
-
+function Movies({data}) {
     return (
-        <MoviesContainer movies={movies}/>
+        <MoviesContainer movies={data}/>
     )
 }
 
-export default Movies
+export default withData(Movies)

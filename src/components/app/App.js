@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
 import Movies from '../../pages/movies'
-import Channels from '../channels/renderChannels'
+import Channels from '../../pages/channels'
 import Login from '../login/login'
 import ErrorBoundry from '../error-boundry/error-boundry'
 

@@ -1,9 +1,10 @@
 import React from 'react'
 import Channel from './channel/channel'
 import classes from './channels-container.module.scss'
+import withData from '../../../hoc/withData'
 
-export default function ChannelsContainer({channels}) {
-    const channelsComponents = renderChannels(channels);
+function ChannelsContainer({data}) {
+    const channelsComponents = renderChannels(data);
 
     return (
         <div className={classes.channels__wrapper}>
@@ -20,3 +21,6 @@ function renderChannels(channels) {
         return (<Channel key={index} name={name} logo={logo} schedule={schedule}/>)
     })
 }
+
+
+export default withData(ChannelsContainer)

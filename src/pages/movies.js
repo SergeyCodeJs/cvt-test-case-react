@@ -7,11 +7,12 @@ import SectionTitle from '../components/section-title/sectionTitle'
 import withDummyVideoService from '../hoc/withDummyMovieService'
 
 function Movies({movieService}) {
-    
+    const moviesData = movieService.getAllMovies;  
+
     return (
         <Fragment>
             <SectionTitle title="&#128293;     Новинки"/>
-            <RenderMovies movieService={movieService}/>
+            <RenderMovies getData={moviesData}/>
             <SectionTitle title="Жанры"/>
             <Genres movieService={movieService}/>
         </Fragment>
