@@ -22,7 +22,7 @@
 
     &__description {
         position: absolute;
-        opacity: 0;
+        opacity: 1;
         max-width: 248px;
         top: 0;
         left: 16px;
@@ -32,4 +32,8 @@
         line-height: 140%;
         color: #F2F2F2;
     }
+}
+
+.low_brightness {
+    filter: brightness(40%);
 }

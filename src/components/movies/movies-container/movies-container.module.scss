@@ -1,19 +1,24 @@
 .movies__container {
-  height: 473px;
-  position: relative;
+    height: 473px;
+    position: relative;
 }
 
 .viewport {
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-  left: 1px;
-  top: 7px;
-  bottom: 7px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 1px;
+    top: 7px;
+    bottom: 7px;
 }
 
 .content {
-  position: relative;
-  display: flex;
-  left: 4px;
+    position: relative;
+    display: flex;
+    left: 4px;
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
