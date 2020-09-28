@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './input.module.scss'
+import propTypes from 'prop-types'
 
 export default function Input({
     type,
@@ -28,4 +29,15 @@ export default function Input({
             onBlur={onInputChange}
             ></input>
     )
+}
+
+
+Input.propTypes = {
+    type: propTypes.string,
+    name: propTypes.string,
+    id: propTypes.oneOfType([propTypes.string, propTypes.number]),
+    placeholder: propTypes.string,
+    className: propTypes.string,
+    onInputChange: propTypes.func,
+    value: propTypes.string
 }

@@ -5,6 +5,7 @@ import Input from '../ui/input/input'
 import CustomCheckbox from '../ui/custom-checkbox/custom-checkbox'
 import Button from '../ui/button/button'
 import Backdrop from '../ui/backdrop/backdrop'
+import propTypes from 'prop-types'
 
 export default function Login({
     loginWindowHandler,
@@ -60,4 +61,16 @@ export default function Login({
             </div>
         </Fragment>
     )
+}
+
+Login.propTypes = {
+    loginWindowHandler: propTypes.func.isRequired,
+    isLoggedIn: propTypes.bool.isRequired,
+    loginErrorText: propTypes.string,
+    onLoginButtonClick: propTypes.func.isRequired,
+    isLoginWindowOpen: propTypes.bool.isRequired,
+    onInputChange: propTypes.func.isRequired,
+    loginInputValue: propTypes.oneOfType([propTypes.string, propTypes.number]),
+    passwordInputValue: propTypes.oneOfType([propTypes.string, propTypes.number]),
+    isChecked: propTypes.bool.isRequired
 }

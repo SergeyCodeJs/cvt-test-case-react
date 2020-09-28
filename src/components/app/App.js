@@ -5,7 +5,7 @@ import Switcher from '../switcher/switcher'
 import Movies from '../../pages/movies'
 import Channels from '../../pages/channels'
 import Login from '../login/login'
-import ErrorBoundry from '../error-boundry/error-boundry'
+import ErrorBoundary from '../error-boundary/error-boundary'
 
 function App() {
     const [isLoggedIn,
@@ -29,7 +29,7 @@ function App() {
 
     useEffect(() => {
         const login = localStorage.getItem('login') || "";
-        const loggedIn = localStorage.getItem('isLoggedIn') || false;
+        const loggedIn = Boolean(localStorage.getItem("isLoggedIn")) || false;
         setIsLoggedIn(loggedIn);
         setUserName(login);
     }, [])
@@ -124,7 +124,7 @@ function App() {
     }
 
     return (
-        <ErrorBoundry>
+        <ErrorBoundary>
             <Router>
                 <Layout
                     isLoggedIn={isLoggedIn}
@@ -157,7 +157,7 @@ function App() {
                         onInputChange={inputChangeHandler}/>
                 </Layout>
             </Router>
-        </ErrorBoundry>
+        </ErrorBoundary>
     );
 }
 

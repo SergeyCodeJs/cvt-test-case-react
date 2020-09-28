@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './button.module.scss'
+import propTypes from 'prop-types'
 
 export default function Button({type, align, marginTop, onClickHandler}) {
     let cls = type === 'search'
@@ -22,4 +23,12 @@ export default function Button({type, align, marginTop, onClickHandler}) {
     return (
         <button style={{marginTop: marginTop}} id={type} className={cls.join(' ')} onClick={onClickHandler}>{buttonText}</button>
     )
+}
+
+
+Button.propTypes = {
+    type: propTypes.string,
+    align: propTypes.bool, 
+    marginTop: propTypes.string,
+    onClickHandler: propTypes.func
 }

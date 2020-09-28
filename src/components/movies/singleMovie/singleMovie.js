@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import classes from '../singleMovie/singleMovie.module.scss'
+import propTypes from 'prop-types'
 
 export default function SingleMovie({movieName, logoSrc, description}) {
     const {
@@ -41,4 +42,10 @@ export default function SingleMovie({movieName, logoSrc, description}) {
             <p className={movie__title}>{movieName}</p>
         </div>
     )
+}
+
+SingleMovie.propTypes = {
+    movieName: propTypes.string.isRequired,
+    logoSrc: propTypes.string.isRequired, 
+    description: propTypes.string.isRequired
 }

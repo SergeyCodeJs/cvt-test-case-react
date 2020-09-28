@@ -1,5 +1,5 @@
 import React from 'react'
-import Channel from './channel/channel'
+import renderChannels from './renderChannels'
 import classes from './channels-container.module.scss'
 import withData from '../../../hoc/withData'
 
@@ -13,13 +13,6 @@ function ChannelsContainer({data}) {
             </div>
         </div>
     )
-}
-
-function renderChannels(channels) {
-    return channels.map((channel, index) => {
-        const {name, logo, schedule} = channel;
-        return (<Channel key={index} name={name} logo={logo} schedule={schedule}/>)
-    })
 }
 
 

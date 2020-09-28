@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './header-login.module.scss'
 import Button from '../../ui/button/button'
 import Input from '../../ui/input/input'
+import propTypes from 'prop-types'; 
 
 export default function HeaderLogin({
     isLoggedIn,
@@ -38,4 +39,14 @@ export default function HeaderLogin({
                 : null}
         </div>
     )
+}
+
+HeaderLogin.propTypes = {
+    isLoggedIn: propTypes.bool.isRequired,
+    userName: propTypes.string.isRequired,
+    onLoginClickHandler: propTypes.func.isRequired,
+    onUserNameClick: propTypes.func.isRequired,
+    changeUserNameInputValue: propTypes.string.isRequired,
+    onNewUserNameChange: propTypes.func.isRequired,
+    showNewUserInput: propTypes.bool.isRequired
 }
