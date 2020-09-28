@@ -1,0 +1,60 @@
+function FETCH_DATA_REQUEST() {
+  return "FETCH_DATA_REQUEST";
+}
+
+function FETCH_DATA_SUCCESS() {
+  return "FETCH_DATA_SUCCESS";
+}
+
+function FETCH_DATA_FAILURE() {
+  return "FETCH_DATA_FAILURE";
+}
+
+
+function ADD_TO_LOCAL_STORAGE() {
+  return "ADD_TO_LOCAL_STORAGE";
+}
+
+function CLEAR_LOCAL_STORAGE() {
+  return  "CLEAR_LOCAL_STORAGE"
+}
+
+function ON_LOGIN_WINDOW_OPEN() {
+  return "ON_LOGIN_WINDOW_OPEN"
+}
+
+function ON_LOGIN_WINDOW_CLOSE() {
+  return "ON_LOGIN_WINDOW_CLOSE"
+}
+
+
+function ON_LOGIN() {
+  return "ON_LOGIN"
+}
+
+
+function ON_LOGOUT() {
+  return "ON_LOGOUT"
+}
+
+function ON_INPUT_CHANGE() {
+  return "ON_INPUT_CHANGE"
+}
+
+function ON_USERNAME_CLICK() {
+  return "ON_USERNAME_CLICK"
+}
+
+export {
+  FETCH_DATA_REQUEST,
+  FETCH_DATA_SUCCESS,
+  FETCH_DATA_FAILURE,
+  ADD_TO_LOCAL_STORAGE,
+  CLEAR_LOCAL_STORAGE,
+  ON_LOGIN_WINDOW_OPEN,
+  ON_LOGIN_WINDOW_CLOSE,
+  ON_LOGIN,
+  ON_LOGOUT,
+  ON_INPUT_CHANGE,
+  ON_USERNAME_CLICK
+}

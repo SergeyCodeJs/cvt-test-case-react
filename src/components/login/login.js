@@ -1,21 +1,22 @@
 import React, {Fragment} from 'react'
+import {connect} from 'react-redux'
 import classes from './login.module.scss'
 import Form from '../ui/form/form'
 import Input from '../ui/input/input'
 import CustomCheckbox from '../ui/custom-checkbox/custom-checkbox'
 import Button from '../ui/button/button'
 import Backdrop from '../ui/backdrop/backdrop'
+import {closeLoginWindow, onInputChange} from '../../redux/actions/actions'
 
-export default function Login({
-    loginWindowHandler,
+function Login({
     isLoggedIn,
     loginErrorText,
-    onLoginButtonClick,
     isLoginWindowOpen,
-    onInputChange,
     loginInputValue,
     passwordInputValue,
-    isChecked
+    isChecked,
+    onLoginWindowClose,
+    onInputChange
 }) {
     const {login, login__title, login__form, login__input, validation} = classes;
     if (!isLoginWindowOpen || isLoggedIn) {
@@ -24,7 +25,7 @@ export default function Login({
 
     return (
         <Fragment>
-            <Backdrop show={true} click={loginWindowHandler}/>
+            <Backdrop show={true} click={onLoginWindowClose}/>
             <div className={login}>
                 <h2 className={login__title}>Вход</h2>
                 <Form className={login__form} action="#">
@@ -48,16 +49,44 @@ export default function Login({
                     </div>
                     <div>
                         <CustomCheckbox
-                            onInputChange={onInputChange}
+                            onInputChange={null}
                             isChecked={isChecked}
                             label="Запомнить"
                             name="remember"
                             id="remember"/>
                     </div>
                     <span className={validation}>{loginErrorText}</span>
-                    <Button onClickHandler={onLoginButtonClick} align={true} marginTop="-4px"/>
+                    <Button onClickHandler={null} align={true} marginTop="-4px"/>
                 </Form>
             </div>
         </Fragment>
     )
 }
+
+const mapStateToProps = ({
+    isLoggedIn,
+    loginErrorText,
+    isLoginWindowOpen,
+    loginInputValue,
+    passwordInputValue,
+    isChecked
+}) => {
+    return {
+        isLoggedIn,
+        loginErrorText,
+        isLoginWindowOpen,
+        loginInputValue,
+        passwordInputValue,
+        isChecked
+    }
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onLoginWindowClose: () => dispatch(closeLoginWindow()),
+        onInputChange: (e) => dispatch(onInputChange(e))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

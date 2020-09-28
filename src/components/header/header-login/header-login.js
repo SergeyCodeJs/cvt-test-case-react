@@ -1,11 +1,15 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import classes from './header-login.module.scss'
 import Button from '../../ui/button/button'
 import Input from '../../ui/input/input'
+import {onLoginWindowOpen, closeLoginWindow} from '../../../redux/actions/actions'
 
-export default function HeaderLogin({
+function HeaderLogin({
     isLoggedIn,
     userName,
+    onLoginWindowOpen,
+    onLoginWindowClose,
     onLoginClickHandler,
     onUserNameClick,
     changeUserNameInputValue,
@@ -31,7 +35,7 @@ export default function HeaderLogin({
                 : null}
             {!showNewUserInput
                 ? <Button
-                        onClickHandler={onLoginClickHandler}
+                        onClickHandler={onLoginWindowOpen}
                         type={!isLoggedIn
                         ? "login"
                         : "exit"}/>
@@ -39,3 +43,16 @@ export default function HeaderLogin({
         </div>
     )
 }
+
+const mapStateToProps = ({isLoggedIn, userName, showNewUserInput}) => {
+    return {isLoggedIn, userName, showNewUserInput}
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onLoginWindowClose: () => dispatch(closeLoginWindow()),
+        onLoginWindowOpen: () => dispatch(onLoginWindowOpen())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderLogin)

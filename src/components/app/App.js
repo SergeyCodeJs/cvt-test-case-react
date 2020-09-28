@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
 import Movies from '../../pages/movies'
-import Channels from '../../pages/channels'
+import Channels from '../channels/channels-container/renderChannels'
 import Login from '../login/login'
 import ErrorBoundry from '../error-boundry/error-boundry'
 
@@ -145,16 +145,7 @@ function App() {
                         </Route>
                         <Route component={Movies}></Route>
                     </Switch>
-                    <Login
-                        isLoginWindowOpen={isLoginWindowOpen}
-                        isLoggedIn={isLoggedIn}
-                        isChecked={isCheckboxChecked}
-                        loginInputValue={loginInputValue}
-                        passwordInputValue={passwordInputValue}
-                        loginErrorText={loginErrorText}
-                        onLoginButtonClick={onLoginButtonClickHandler}
-                        loginWindowHandler={loginWindowHandler}
-                        onInputChange={inputChangeHandler}/>
+                    <Login />
                 </Layout>
             </Router>
         </ErrorBoundry>

@@ -25,7 +25,7 @@ export default function Header({
                 <Button type="search"/>
             </Form>
             <HeaderLogin
-                userName={userName}
+                
                 onLoginClickHandler={onLoginClickHandler}
                 onUserNameClick={onUserNameClick}
                 isLoggedIn={isLoggedIn}

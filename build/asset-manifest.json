@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.17a587d6.chunk.css",
+    "main.js": "/static/js/main.a644b832.chunk.js",
+    "main.js.map": "/static/js/main.a644b832.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.37f185b8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.37f185b8.js.map",
+    "static/js/2.bff01868.chunk.js": "/static/js/2.bff01868.chunk.js",
+    "static/js/2.bff01868.chunk.js.map": "/static/js/2.bff01868.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.2adf69eb232d41d71dde6839cd241d34.js": "/precache-manifest.2adf69eb232d41d71dde6839cd241d34.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.17a587d6.chunk.css.map": "/static/css/main.17a587d6.chunk.css.map",
+    "static/js/2.bff01868.chunk.js.LICENSE.txt": "/static/js/2.bff01868.chunk.js.LICENSE.txt",
+    "static/media/batman.png": "/static/media/batman.fe3f90dd.png",
+    "static/media/hollywood.png": "/static/media/hollywood.0927fdd6.png",
+    "static/media/mult-v-kino.png": "/static/media/mult-v-kino.4d6d09bc.png",
+    "static/media/strip.png": "/static/media/strip.5cbdd0c4.png",
+    "static/media/terminator.png": "/static/media/terminator.c2f3265a.png",
+    "static/media/tupoi.png": "/static/media/tupoi.4fbbe458.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.37f185b8.js",
+    "static/js/2.bff01868.chunk.js",
+    "static/css/main.17a587d6.chunk.css",
+    "static/js/main.a644b832.chunk.js"
+  ]
+}

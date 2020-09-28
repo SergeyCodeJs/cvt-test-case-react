@@ -14,7 +14,6 @@ import rbk from '../assets/images/channels/rbc.png'
 import amedia from '../assets/images/channels/amedia.png'
 import prog from '../assets/images/channels/prog.png'
 
-
 export default class DummyMoviesService {
     _movies = [
         {
@@ -145,8 +144,7 @@ export default class DummyMoviesService {
                     title: "Секс в большом городе"
                 }
             ]
-        },
-        {
+        }, {
             name: "Программист Plus",
             logo: prog,
             schedule: [
@@ -164,14 +162,24 @@ export default class DummyMoviesService {
         }
     ]
     getAllMovies = async() => {
-        return this._movies
+        const data = new Promise((resolve, reject) => {
+            resolve(this._movies)
+        })
+        return await data
     }
 
     getAllGenres = async() => {
-        return this._genres
+        const data = new Promise((resolve, reject) => {
+            resolve(this._genres)
+        })
+        return await data
     }
 
     getAllChannels = async() => {
-        return this._channels
+        const data = new Promise((resolve, reject) => {
+            resolve(this._channels)
+        })
+
+        return await data
     }
 }
