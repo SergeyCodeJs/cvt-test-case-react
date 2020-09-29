@@ -3,12 +3,12 @@ import classes from './backdrop.module.scss'
 import useLockBodyScroll from './useLockBodyScroll'
 import propTypes from 'prop-types'
 
-export default function Backdrop({show, click}) {
+export default function Backdrop({show, onClick}) {
   const {backdrop} = classes;
   useLockBodyScroll();
   
     return (
-      show ? <div onClick={click} className={backdrop}></div> : null
+      show ? <div onClick={onClick} className={backdrop}></div> : null
     )
 }
 

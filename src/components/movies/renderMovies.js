@@ -1,15 +1,14 @@
 import React from 'react'
 import MoviesContainer from './movies-container/moviesContainer'
-import withData from '../../hoc/withData'
 import propTypes from 'prop-types'
 
-function Movies({data}) {
+function Movies({movies}) {
     return (
-        <MoviesContainer movies={data}/>
+        <MoviesContainer movies={movies}/>
     )
 }
 
-export default withData(Movies)
+export default Movies
 
 Movies.propTypes = {
     data: propTypes.array

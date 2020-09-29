@@ -1,10 +1,9 @@
 import React from 'react'
 import renderChannels from './renderChannels'
 import classes from './channels-container.module.scss'
-import withData from '../../../hoc/withData'
 
-function ChannelsContainer({data}) {
-    const channelsComponents = renderChannels(data);
+function ChannelsContainer({channels}) {
+    const channelsComponents = renderChannels(channels);
 
     return (
         <div className={classes.channels__wrapper}>
@@ -16,4 +15,4 @@ function ChannelsContainer({data}) {
 }
 
 
-export default withData(ChannelsContainer)
+export default ChannelsContainer

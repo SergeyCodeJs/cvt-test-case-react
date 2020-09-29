@@ -3,7 +3,7 @@ import Footer from '../../components/footer/footer'
 import Header from '../../components/header/header'
 
 export default(props) => {
-    const {isLoggedIn, isLoginWindowOpen, onLoginClickHandler, userName, onUserNameClick, changeUserNameInputValue, onNewUserNameChange, showNewUserInput} = props;
+    const {isLoggedIn, isLoginWindowOpen, onLoginClickHandler, userName, onUserNameClick, newUserNameInputValue, onNewUserNameChange, showNewUserInput} = props;
 
     return (
         <Fragment>
@@ -13,7 +13,7 @@ export default(props) => {
                 isLoginWindowOpen={isLoginWindowOpen}
                 onLoginClickHandler={onLoginClickHandler}
                 onUserNameClick={onUserNameClick}
-                changeUserNameInputValue={changeUserNameInputValue}
+                newUserNameInputValue={newUserNameInputValue}
                 onNewUserNameChange={onNewUserNameChange}
                 showNewUserInput={showNewUserInput}
                 />

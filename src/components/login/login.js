@@ -8,7 +8,7 @@ import Backdrop from '../ui/backdrop/backdrop'
 import propTypes from 'prop-types'
 
 export default function Login({
-    loginWindowHandler,
+    onBackdropClick,
     isLoggedIn,
     loginErrorText,
     onLoginButtonClick,
@@ -25,36 +25,32 @@ export default function Login({
 
     return (
         <Fragment>
-            <Backdrop show={true} click={loginWindowHandler}/>
+            <Backdrop show={true} onClick={onBackdropClick}/>
             <div className={login}>
                 <h2 className={login__title}>Вход</h2>
-                <Form className={login__form} action="#">
-                    <div>
-                        <Input
-                            className={login__input}
-                            type="text"
-                            name="login"
-                            id="login"
-                            placeholder="Логин"
-                            onInputChange={onInputChange}
-                            value={loginInputValue}/>
-                        <Input
-                            className={login__input}
-                            type="password"
-                            name="password"
-                            id="password"
-                            placeholder="Пароль"
-                            onInputChange={onInputChange}
-                            value={passwordInputValue}/>
-                    </div>
-                    <div>
-                        <CustomCheckbox
-                            onInputChange={onInputChange}
-                            isChecked={isChecked}
-                            label="Запомнить"
-                            name="remember"
-                            id="remember"/>
-                    </div>
+                <Form className={login__form} action={'#'}>
+                    <Input
+                        className={login__input}
+                        type="text"
+                        name="login"
+                        id="login"
+                        placeholder="Логин"
+                        onInputChange={onInputChange}
+                        value={loginInputValue}/>
+                    <Input
+                        className={login__input}
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Пароль"
+                        onInputChange={onInputChange}
+                        value={passwordInputValue}/>
+                    <CustomCheckbox
+                        onInputChange={onInputChange}
+                        isChecked={isChecked}
+                        label="Запомнить"
+                        name="remember"
+                        id="remember"/>
                     <span className={validation}>{loginErrorText}</span>
                     <Button onClickHandler={onLoginButtonClick} align={true} marginTop="-4px"/>
                 </Form>
@@ -64,7 +60,7 @@ export default function Login({
 }
 
 Login.propTypes = {
-    loginWindowHandler: propTypes.func.isRequired,
+    onBackdropClick: propTypes.func.isRequired,
     isLoggedIn: propTypes.bool.isRequired,
     loginErrorText: propTypes.string,
     onLoginButtonClick: propTypes.func.isRequired,

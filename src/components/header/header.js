@@ -13,7 +13,7 @@ export default function Header({
     userName,
     onLoginClickHandler,
     onUserNameClick,
-    changeUserNameInputValue,
+    newUserNameInputValue,
     onNewUserNameChange,
     showNewUserInput
 }) {
@@ -31,7 +31,7 @@ export default function Header({
                 onUserNameClick={onUserNameClick}
                 isLoggedIn={isLoggedIn}
                 isLoginWindowOpen={isLoginWindowOpen}
-                changeUserNameInputValue={changeUserNameInputValue}onNewUserNameChange={onNewUserNameChange}
+                newUserNameInputValue={newUserNameInputValue}onNewUserNameChange={onNewUserNameChange}
                 showNewUserInput={showNewUserInput}
                 />
         </header>
@@ -45,7 +45,7 @@ Header.propTypes = {
     userName: propTypes.string.isRequired,
     onLoginClickHandler: propTypes.func.isRequired,
     onUserNameClick: propTypes.func.isRequired,
-    changeUserNameInputValue: propTypes.string.isRequired,
+    newUserNameInputValue: propTypes.string.isRequired,
     onNewUserNameChange: propTypes.func.isRequired,
     showNewUserInput: propTypes.bool.isRequired
 }

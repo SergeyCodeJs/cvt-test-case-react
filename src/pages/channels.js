@@ -1,11 +1,10 @@
 import React from 'react'
 import ChannelsContainer from '../components/channels/channels-container/channels-container'
 import withDummyVideoService from '../hoc/withDummyMovieService'
+import withChannels from '../hoc/withChannels'
 
-function Channels({movieService}) {
-    const channelsData = movieService.getAllChannels;
-
-    return (<ChannelsContainer getData = {channelsData}/>)
+function Channels({channels}) {
+    return (<ChannelsContainer channels={channels}/>)
 }
 
-export default withDummyVideoService(Channels)
+export default withDummyVideoService(withChannels(Channels))

@@ -1,19 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import GenresContainer from './genres-container/genresContainer'
 
-export default function Genres({movieService}) {
-    const [genres,
-        setGenres] = useState(null);
-
-    useEffect(() => {
-        movieService
-            .getAllGenres()
-            .then(genre => setGenres(genre));
-    }, [movieService])
-
-    if (!genres) {
-        return null
-    }
-
+export default function Genres({genres}) {
     return <GenresContainer genres={genres}/>
 }

@@ -6,33 +6,38 @@ import Movies from '../../pages/movies'
 import Channels from '../../pages/channels'
 import Login from '../login/login'
 import ErrorBoundary from '../error-boundary/error-boundary'
+import {validateInput} from '../../utils/validateInput'
 
 function App() {
-    const [isLoggedIn,
-        setIsLoggedIn] = useState(false);
-    const [userName,
-        setUserName] = useState("");
-    const [userNameInputValue,
-        setUserNameInputValue] = useState("");
-    const [showNewUserInput,
-        setShowNewUserInput] = useState(false);
-    const [isLoginWindowOpen,
-        setIsLoginWindowOpen] = useState(false);
-    const [loginInputValue,
-        setLoginInputValue] = useState("");
-    const [passwordInputValue,
-        setPasswordInputValue] = useState("");
-    const [isCheckboxChecked,
-        setIsCheckboxChecked] = useState(false);
-    const [loginErrorText,
-        setLoginErrorText] = useState("");
-
+        const [isLoggedIn,
+            setIsLoggedIn] = useState(false);
+        const [userName,
+            setUserName] = useState("");
+        const [newUserNameInputValue,
+            setNewUserNameInputValue] = useState("");
+        const [showNewUserInput,
+            setShowNewUserInput] = useState(false);
+        const [isLoginWindowOpen,
+            setIsLoginWindowOpen] = useState(false);
+        const [loginInputValue,
+            setLoginInputValue] = useState("");
+        const [passwordInputValue,
+            setPasswordInputValue] = useState("");
+        const [isCheckboxChecked,
+            setIsCheckboxChecked] = useState(false);
+        const [loginErrorText,
+            setLoginErrorText] = useState("");
+    
     useEffect(() => {
-        const login = localStorage.getItem('login') || "";
+        onDomLoad();
+    }, [])
+
+    const onDomLoad = () => {
+        const userName = localStorage.getItem('userName') || "";
         const loggedIn = Boolean(localStorage.getItem("isLoggedIn")) || false;
         setIsLoggedIn(loggedIn);
-        setUserName(login);
-    }, [])
+        setUserName(userName);
+    }
 
     function loginWindowHandler() {
         if (!isLoggedIn) {
@@ -71,21 +76,30 @@ function App() {
         if (inputName === 'remember') {
             setIsCheckboxChecked(prev => !prev);
         }
+
+        if (inputName === "changeName") {
+            setNewUserNameInputValue(inputValue);
+
+            if (e.type === 'blur') {
+                if (!validateInput(newUserNameInputValue, e.type)) {
+                    return
+                }
+
+                setUserName(newUserNameInputValue);
+                setShowNewUserInput(false);
+                localStorage.setItem('userName', newUserNameInputValue);
+                localStorage.setItem('isLoggedIn', true);
+            }
+        }
     }
 
     const onLoginButtonClickHandler = (e) => {
         e.preventDefault();
 
-        if (loginInputValue === "") {
-            setLoginErrorText("Поле логина не может быть пустым, пожалуйста, введите логин!")
+        if (!validateInput(loginInputValue, undefined, setLoginErrorText)) {
             return
-        }
+        };
 
-        if (loginInputValue.length > 13) {
-            setLoginErrorText("Поле логина не может быть длиннее 13 символов, пожалуйста, введите более коротки" +
-                    "й логин")
-            return
-        }
         setIsLoggedIn(true);
         setUserName(loginInputValue);
 
@@ -97,30 +111,7 @@ function App() {
 
     const onUserNameClickHandler = () => {
         setShowNewUserInput(true);
-        setUserNameInputValue(userName);
-    }
-
-    const onNewUserNameChangeHandler = (e) => {
-        e.preventDefault();
-        setUserNameInputValue(e.target.value);
-
-        if (e.type === 'blur') {
-            if (userNameInputValue === "") {
-                alert("Поле логина не может быть пустым, пожалуйста, введите логин!")
-                return
-            }
-
-            if (userNameInputValue.length > 13) {
-                alert("Поле логина не может быть длиннее 13 символов, пожалуйста, введите более коротки" +
-                        "й логин")
-                return
-            }
-
-            setUserName(userNameInputValue);
-            setShowNewUserInput(false);
-            localStorage.setItem('login', userNameInputValue);
-            localStorage.setItem('isLoggedIn', true);
-        }
+        setNewUserNameInputValue(userName);
     }
 
     return (
@@ -133,8 +124,8 @@ function App() {
                     onLoginClickHandler={loginWindowHandler}
                     onUserNameClick={onUserNameClickHandler}
                     showNewUserInput={showNewUserInput}
-                    changeUserNameInputValue={userNameInputValue}
-                    onNewUserNameChange={onNewUserNameChangeHandler}>
+                    newUserNameInputValue={newUserNameInputValue}
+                    onNewUserNameChange={inputChangeHandler}>
                     <Switcher/>
                     <Switch>
                         <Route path="/channels">
@@ -153,7 +144,7 @@ function App() {
                         passwordInputValue={passwordInputValue}
                         loginErrorText={loginErrorText}
                         onLoginButtonClick={onLoginButtonClickHandler}
-                        loginWindowHandler={loginWindowHandler}
+                        onBackdropClick={loginWindowHandler}
                         onInputChange={inputChangeHandler}/>
                 </Layout>
             </Router>

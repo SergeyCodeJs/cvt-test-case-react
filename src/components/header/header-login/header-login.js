@@ -9,7 +9,7 @@ export default function HeaderLogin({
     userName,
     onLoginClickHandler,
     onUserNameClick,
-    changeUserNameInputValue,
+    newUserNameInputValue,
     onNewUserNameChange,
     showNewUserInput
 }) {
@@ -27,7 +27,7 @@ export default function HeaderLogin({
                         id="changeName"
                         placeholder="Введите новое имя"
                         className={classes.new_name_input}
-                        value={changeUserNameInputValue}
+                        value={newUserNameInputValue}
                         onInputChange={onNewUserNameChange}/>
                 : null}
             {!showNewUserInput
@@ -46,7 +46,7 @@ HeaderLogin.propTypes = {
     userName: propTypes.string.isRequired,
     onLoginClickHandler: propTypes.func.isRequired,
     onUserNameClick: propTypes.func.isRequired,
-    changeUserNameInputValue: propTypes.string.isRequired,
+    newUserNameInputValue: propTypes.string.isRequired,
     onNewUserNameChange: propTypes.func.isRequired,
     showNewUserInput: propTypes.bool.isRequired
 }
