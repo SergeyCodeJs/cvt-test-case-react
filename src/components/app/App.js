@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
 import Movies from '../../pages/movies'
@@ -135,10 +135,7 @@ function App() {
                         <Route path="/channels">
                             <Channels/>
                         </Route>
-                        <Route path="/channels">
-                            <Redirect to="/channels"/>
-                        </Route>
-                        <Route component={FailPage}></Route>
+                        <Route path='*' component={FailPage}></Route>
                     </Switch>
                     <Login
                         isLoginWindowOpen={isLoginWindowOpen}
