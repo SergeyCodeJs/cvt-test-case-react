@@ -7,6 +7,7 @@ import Channels from '../../pages/channels'
 import Login from '../login/login'
 import ErrorBoundary from '../error-boundary/error-boundary'
 import {validateInput} from '../../utils/validateInput'
+import FailPage from '../../pages/failPage'
 
 function App() {
         const [isLoggedIn,
@@ -39,7 +40,7 @@ function App() {
         setUserName(userName);
     }
 
-    function loginWindowHandler() {
+    const loginWindowHandler = () => {
         if (!isLoggedIn) {
             setIsLoginWindowOpen(isLoginWindowOpen => !isLoginWindowOpen);
             setLoginInputValue("");
@@ -78,6 +79,7 @@ function App() {
         }
 
         if (inputName === "changeName") {
+            e.preventDefault();
             setNewUserNameInputValue(inputValue);
 
             if (e.type === 'blur') {
@@ -104,7 +106,7 @@ function App() {
         setUserName(loginInputValue);
 
         if (isCheckboxChecked) {
-            localStorage.setItem('login', loginInputValue);
+            localStorage.setItem('userName', loginInputValue);
             localStorage.setItem('isLoggedIn', true);
         }
     }
@@ -131,10 +133,10 @@ function App() {
                         <Route path="/channels">
                             <Channels/>
                         </Route>
-                        <Route path="/">
+                        <Route exact path="/">
                             <Movies/>
                         </Route>
-                        <Route component={Movies}></Route>
+                        <Route component={FailPage}></Route>
                     </Switch>
                     <Login
                         isLoginWindowOpen={isLoginWindowOpen}
