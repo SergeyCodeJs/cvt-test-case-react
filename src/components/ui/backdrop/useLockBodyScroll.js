@@ -5,13 +5,18 @@ export default function useLockBodyScroll() {
         const originalStyle = window
             .getComputedStyle(document.body)
             .overflow;
-
+        const bodyWidth = parseInt(getComputedStyle(document.body).width);
+        
         const scrollWidth = calcScroll();
+        
         document.body.style.overflow = 'hidden';
+        document.body.style.width = bodyWidth + 'px';
         document.body.style.marginRight = scrollWidth + 'px';
+        
         return () => {
           document.body.style.marginRight = "";
           document.body.style.overflow = originalStyle;
+          document.body.style.width = "";
         }
     }, []);
 }
