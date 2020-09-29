@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import Layout from '../../hoc/layout/layout'
 import Switcher from '../switcher/switcher'
 import Movies from '../../pages/movies'
@@ -129,11 +129,14 @@ function App() {
                     onNewUserNameChange={inputChangeHandler}>
                     <Switcher/>
                     <Switch>
+                        <Route exact path="/">
+                            <Movies/>
+                        </Route>
                         <Route path="/channels">
                             <Channels/>
                         </Route>
-                        <Route exact path="/">
-                            <Movies/>
+                        <Route path="/channels">
+                            <Redirect to="/channels"/>
                         </Route>
                         <Route component={FailPage}></Route>
                     </Switch>
