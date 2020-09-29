@@ -10,25 +10,25 @@ import {validateInput} from '../../utils/validateInput'
 import FailPage from '../../pages/failPage'
 
 function App() {
-        const [isLoggedIn,
-            setIsLoggedIn] = useState(false);
-        const [userName,
-            setUserName] = useState("");
-        const [newUserNameInputValue,
-            setNewUserNameInputValue] = useState("");
-        const [showNewUserInput,
-            setShowNewUserInput] = useState(false);
-        const [isLoginWindowOpen,
-            setIsLoginWindowOpen] = useState(false);
-        const [loginInputValue,
-            setLoginInputValue] = useState("");
-        const [passwordInputValue,
-            setPasswordInputValue] = useState("");
-        const [isCheckboxChecked,
-            setIsCheckboxChecked] = useState(false);
-        const [loginErrorText,
-            setLoginErrorText] = useState("");
-    
+    const [isLoggedIn,
+        setIsLoggedIn] = useState(false);
+    const [userName,
+        setUserName] = useState("");
+    const [newUserNameInputValue,
+        setNewUserNameInputValue] = useState("");
+    const [showNewUserInput,
+        setShowNewUserInput] = useState(false);
+    const [isLoginWindowOpen,
+        setIsLoginWindowOpen] = useState(false);
+    const [loginInputValue,
+        setLoginInputValue] = useState("");
+    const [passwordInputValue,
+        setPasswordInputValue] = useState("");
+    const [isCheckboxChecked,
+        setIsCheckboxChecked] = useState(false);
+    const [loginErrorText,
+        setLoginErrorText] = useState("");
+
     useEffect(() => {
         onDomLoad();
     }, [])
@@ -86,7 +86,6 @@ function App() {
                 if (!validateInput(newUserNameInputValue, e.type)) {
                     return
                 }
-
                 setUserName(newUserNameInputValue);
                 setShowNewUserInput(false);
                 localStorage.setItem('userName', newUserNameInputValue);
